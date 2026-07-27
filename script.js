@@ -46,3 +46,23 @@ function changePhoto() {
         foto.style.opacity = "1";
     };
 }
+kalpEfekti();
+
+function kalpEfekti(){
+
+    const kalp=document.createElement("div");
+    kalp.className="kalp";
+    kalp.innerHTML="❤️";
+
+    const foto=document.getElementById("foto");
+    const rect=foto.getBoundingClientRect();
+
+    kalp.style.left=(rect.left+rect.width/2-10)+"px";
+    kalp.style.top=(rect.top+rect.height/2)+"px";
+
+    document.body.appendChild(kalp);
+
+    setTimeout(()=>{
+        kalp.remove();
+    },1500);
+}
