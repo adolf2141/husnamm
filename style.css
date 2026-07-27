@@ -5,15 +5,27 @@
 }
 
 body{
-    background:#000;
-    color:white;
+    margin:0;
     font-family:Arial, Helvetica, sans-serif;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     min-height:100vh;
+    overflow:hidden;
+
+    background:linear-gradient(-45deg,
+    #ff758c,
+    #ff7eb3,
+    #ffb6c1,
+    #ffd6e8);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .container{
@@ -42,4 +54,3 @@ body{
 #foto{
     transition:0.3s;
 }
-
