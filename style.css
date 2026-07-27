@@ -13,9 +13,11 @@ body{
     min-height:100vh;
     overflow:hidden;
 
-    background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb6c1,#ffd6e8);
-    background-size:400% 400%;
-    animation:bg 12s ease infinite;
+    background-image:url("background.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
 @keyframes bg{
