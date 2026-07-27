@@ -13,11 +13,7 @@ body{
     min-height:100vh;
     overflow:hidden;
 
-    background:linear-gradient(-45deg,
-    #ff758c,
-    #ff7eb3,
-    #ffb6c1,
-    #ffd6e8);
+    background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb6c1,#ffd6e8);
     background-size:400% 400%;
     animation:bg 12s ease infinite;
 }
@@ -33,6 +29,8 @@ body{
     max-width:430px;
     text-align:center;
     padding:20px;
+    position:relative;
+    z-index:2;
 }
 
 #foto{
@@ -42,6 +40,11 @@ body{
     border-radius:20px;
     box-shadow:0 0 20px rgba(255,0,100,.5);
     cursor:pointer;
+    transition:opacity .4s ease, transform .3s ease;
+}
+
+#foto:hover{
+    transform:scale(1.02);
 }
 
 #yazi{
@@ -51,9 +54,9 @@ body{
     color:#fff;
     min-height:120px;
     padding:0 10px;
-#foto{
-    transition:0.3s;
+    text-shadow:0 0 10px rgba(255,255,255,.7);
 }
+
 /* Hareketli kalpler */
 body::before{
     content:"❤️ 💖 💕 💗 💞 💘";
@@ -61,8 +64,8 @@ body::before{
     left:0;
     bottom:-50px;
     width:100%;
-    font-size:30px;
     text-align:center;
+    font-size:30px;
     opacity:.25;
     animation:hearts 18s linear infinite;
     pointer-events:none;
