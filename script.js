@@ -25,6 +25,7 @@ const sozler = [
 let i = 0;
 
 function changePhoto() {
+
     i++;
 
     if (i >= fotograflar.length) {
@@ -34,35 +35,42 @@ function changePhoto() {
     const foto = document.getElementById("foto");
     const yazi = document.getElementById("yazi");
 
-    // Kaybolma animasyonu
     foto.style.opacity = "0";
 
-    // Aynı anda fotoğraf ve yazıyı değiştir
     foto.src = fotograflar[i];
     yazi.innerText = sozler[i];
 
-    // Yeni fotoğraf yüklenince görünür yap
     foto.onload = function () {
         foto.style.opacity = "1";
     };
+
+    // Kalp efekti
+    kalpEfekti();
 }
-kalpEfekti();
 
-function kalpEfekti(){
+function kalpEfekti() {
 
-    const kalp=document.createElement("div");
-    kalp.className="kalp";
-    kalp.innerHTML="❤️";
+    const foto = document.getElementById("foto");
+    const rect = foto.getBoundingClientRect();
 
-    const foto=document.getElementById("foto");
-    const rect=foto.getBoundingClientRect();
+    for (let j = 0; j < 15; j++) {
 
-    kalp.style.left=(rect.left+rect.width/2-10)+"px";
-    kalp.style.top=(rect.top+rect.height/2)+"px";
+        const kalp = document.createElement("div");
 
-    document.body.appendChild(kalp);
+        kalp.className = "kalp";
 
-    setTimeout(()=>{
-        kalp.remove();
-    },1500);
+        kalp.innerHTML = ["❤️","💖","💕","💗","💞"][Math.floor(Math.random()*5)];
+
+        kalp.style.left = (rect.left + rect.width / 2) + "px";
+        kalp.style.top = (rect.top + rect.height / 2) + "px";
+
+        kalp.style.setProperty("--x",(Math.random()*220-110)+"px");
+        kalp.style.setProperty("--y",(-Math.random()*250-100)+"px");
+
+        document.body.appendChild(kalp);
+
+        setTimeout(() => {
+            kalp.remove();
+        },1800);
+    }
 }
