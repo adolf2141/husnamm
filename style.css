@@ -1,115 +1,50 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
 body{
-    background:linear-gradient(135deg,#000,#1b002b);
+    margin:0;
+    background:#000;
     color:white;
+    font-family:Arial, sans-serif;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
 }
 
 .container{
-    width:90%;
-    max-width:400px;
+    width:100%;
+    max-width:430px;
     text-align:center;
-    padding:30px;
+    padding:20px;
+}
+
+#foto{
+    width:100%;
+    height:420px;
+    object-fit:cover;
     border-radius:20px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 30px rgba(255,0,120,.5);
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,255,255,.2);
 }
 
-h1{
-    font-size:40px;
-    color:#ff4da6;
-    text-shadow:0 0 20px #ff4da6;
-    animation:parla 2s infinite;
-}
-
-p{
-    margin:20px 0;
-    font-size:18px;
+#yazi{
+    margin:25px 0;
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    min-height:80px;
 }
 
 button{
     padding:15px 35px;
+    font-size:20px;
     border:none;
-    border-radius:50px;
-    background:#ff006a;
+    border-radius:40px;
+    background:#ff4d6d;
     color:white;
-    font-size:18px;
     cursor:pointer;
     transition:.3s;
 }
 
 button:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px #ff006a;
-}
-
-#yazi{
-    margin-top:25px;
-    font-size:22px;
-    color:#ffd6ec;
-}
-
-@keyframes parla{
-    0%,100%{
-        text-shadow:0 0 15px #ff4da6;
-    }
-    50%{
-        text-shadow:0 0 35px #ff4da6;
-    }
-}
-#stars{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image:
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(#ff69b4 1px, transparent 1px);
-    background-size:60px 60px,120px 120px;
-    animation:yildiz 25s linear infinite;
-    z-index:-1;
-}
-
-@keyframes yildiz{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(60px);
-    }
-}
-.slider{
-    text-align:center;
-}
-
-#foto{
-    width:300px;
-    max-width:90%;
-    border-radius:20px;
-    cursor:pointer;
-    box-shadow:0 0 20px hotpink;
-    transition:0.4s;
-}
-
-#foto:hover{
-    transform:scale(1.03);
-}
-
-#yazi{
-    color:white;
-    font-size:22px;
-    margin-top:20px;
-    padding:10px;
+    transform:scale(1.05);
 }
