@@ -1,18 +1,3 @@
-function mesaj() {
-
-    const mesajlar = [
-        "❤️ Seni tanıdığım için çok mutluyum.",
-        "🌹 Gülüşün dünyamı güzelleştiriyor.",
-        "💖 İyi ki varsın Hüsna.",
-        "✨ Sen benim en güzel tesadüfümsün.",
-        "🥰 Bu site sadece senin için yapıldı."
-    ];
-
-    let sec = Math.floor(Math.random() * mesajlar.length);
-
-    document.getElementById("mesaj").innerHTML = mesajlar[sec];
-}
-
 const fotograflar = [
     "foto1.jpg",
     "foto2.jpg",
@@ -39,13 +24,24 @@ const sozler = [
 
 let i = 0;
 
-function changePhoto() {
-    i++;
+const foto = document.getElementById("foto");
+const yazi = document.getElementById("yazi");
 
-    if (i >= fotograflar.length) {
-        i = 0;
-    }
+foto.addEventListener("click", () => {
 
-    document.getElementById("foto").src = fotograflar[i];
-    document.getElementById("yazi").innerText = sozler[i];
-}
+    foto.style.opacity = "0";
+
+    setTimeout(() => {
+        i++;
+
+        if(i >= fotograflar.length){
+            i = 0;
+        }
+
+        foto.src = fotograflar[i];
+        yazi.innerText = sozler[i];
+
+        foto.style.opacity = "1";
+    },300);
+
+});
