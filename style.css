@@ -31,8 +31,10 @@ body{
     max-width:430px;
     text-align:center;
     padding:20px;
-    position:relative;
-    z-index:2;
+
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
 }
 
 #foto{
