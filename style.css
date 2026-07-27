@@ -109,21 +109,28 @@ body::before{
     position:relative;
     z-index:1;
 }
+/* Fotoğrafa dokununca çıkan kalpler */
 .kalp{
     position:fixed;
-    font-size:25px;
-    animation:uc 1.5s linear forwards;
+    left:0;
+    top:0;
+    font-size:24px;
     pointer-events:none;
     z-index:9999;
+    will-change:transform,opacity;
+    animation:kalpUcus 1.8s ease-out forwards;
 }
 
-@keyframes uc{
+@keyframes kalpUcus{
+
     0%{
         opacity:1;
-        transform:translateY(0) scale(1);
+        transform:translate(0,0) scale(.5) rotate(0deg);
     }
+
     100%{
         opacity:0;
-        transform:translateY(-150px) scale(2);
+        transform:translate(var(--x),var(--y)) scale(1.8) rotate(360deg);
     }
+
 }
