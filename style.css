@@ -54,3 +54,25 @@ body{
 #foto{
     transition:0.3s;
 }
+/* Hareketli kalpler */
+body::before{
+    content:"❤️ 💖 💕 💗 💞 💘";
+    position:fixed;
+    left:0;
+    bottom:-50px;
+    width:100%;
+    font-size:30px;
+    text-align:center;
+    opacity:.25;
+    animation:hearts 18s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes hearts{
+    0%{
+        transform:translateY(0);
+    }
+    100%{
+        transform:translateY(-120vh);
+    }
+}
