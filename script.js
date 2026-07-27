@@ -24,24 +24,25 @@ const sozler = [
 
 let i = 0;
 
-const foto = document.getElementById("foto");
-const yazi = document.getElementById("yazi");
+function changePhoto() {
+    i++;
 
-foto.addEventListener("click", () => {
+    if (i >= fotograflar.length) {
+        i = 0;
+    }
 
+    const foto = document.getElementById("foto");
+    const yazi = document.getElementById("yazi");
+
+    // Kaybolma animasyonu
     foto.style.opacity = "0";
 
-    setTimeout(() => {
-        i++;
+    // Aynı anda fotoğraf ve yazıyı değiştir
+    foto.src = fotograflar[i];
+    yazi.innerText = sozler[i];
 
-        if(i >= fotograflar.length){
-            i = 0;
-        }
-
-        foto.src = fotograflar[i];
-        yazi.innerText = sozler[i];
-
+    // Yeni fotoğraf yüklenince görünür yap
+    foto.onload = function () {
         foto.style.opacity = "1";
-    },300);
-
-});
+    };
+}
