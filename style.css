@@ -109,3 +109,21 @@ body::before{
     position:relative;
     z-index:1;
 }
+.kalp{
+    position:fixed;
+    font-size:25px;
+    animation:uc 1.5s linear forwards;
+    pointer-events:none;
+    z-index:9999;
+}
+
+@keyframes uc{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-150px) scale(2);
+    }
+}
