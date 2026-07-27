@@ -90,3 +90,26 @@ button:hover{
         transform:translateY(60px);
     }
 }
+.slider{
+    text-align:center;
+}
+
+#foto{
+    width:300px;
+    max-width:90%;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px hotpink;
+    transition:0.4s;
+}
+
+#foto:hover{
+    transform:scale(1.03);
+}
+
+#yazi{
+    color:white;
+    font-size:22px;
+    margin-top:20px;
+    padding:10px;
+}
